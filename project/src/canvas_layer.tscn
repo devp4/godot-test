@@ -20,6 +20,20 @@ offset_right = 104.0
 offset_bottom = 42.0
 text = "Key"
 
+[node name="Label2" type="Label" parent="ColorRect"]
+offset_left = 651.0
+offset_top = 25.0
+offset_right = 691.0
+offset_bottom = 48.0
+text = "Key"
+
+[node name="Label3" type="Label" parent="ColorRect"]
+offset_left = 67.0
+offset_top = 164.0
+offset_right = 107.0
+offset_bottom = 187.0
+text = "Value"
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -49,10 +63,39 @@ text = "submit
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 164.0
-offset_right = 107.0
-offset_bottom = 187.0
+offset_left = 658.0
+offset_top = 172.0
+offset_right = 702.0
+offset_bottom = 195.0
 text = "Value"
 
+[node name="getvalueinput" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 68.0
+offset_right = 1052.0
+offset_bottom = 131.0
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 212.0
+offset_right = 1070.0
+offset_bottom = 264.0
+color = Color(0.226707, 0.226707, 0.226707, 1)
+
+[node name="outputlabel" type="Label" parent="TextureRect/ColorRect"]
+layout_mode = 0
+offset_right = 420.0
+offset_bottom = 50.0
+
+[node name="Button2" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 709.0
+offset_top = 329.0
+offset_right = 1000.0
+offset_bottom = 355.0
+text = "Get"
+
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/Button2" to="." method="_on_button_2_pressed"]
