@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:	
-	var jsString = "localstorage.setItem(%s,%s)"
+	var jsString = "localStorage.setItem(%s,%s)"
 	var completeString = jsString % [keyInput.text, valueInput.text]
 	
 	if OS.has_feature('web'):
@@ -29,7 +29,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	var jsString = "localstorage.getItem(%s)"
+	var jsString = "localStorage.getItem(%s)"
 	var completeString = jsString % [getValueInput.text]
 	
 	var result
