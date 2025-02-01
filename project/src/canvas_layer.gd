@@ -18,27 +18,27 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_pressed() -> void:	
-	var jsString = "localStorage.setItem(%s,%s)"
-	var completeString = jsString % [keyInput.text, valueInput.text]
+func _on_button_pressed() -> void:
+	var key = keyInput.text
+	var value = valueInput.text
 	
 	if OS.has_feature('web'):
-		JavaScriptBridge.eval(completeString)
+		# Directly call localStorage methods without eval
+		JavaScriptBridge.get_interface("localStorage").setItem(key, value)
 	else:
-		print("The JavaScriptBridge singleton is NOT available")
+		print("LocalStorage not available (set)")
 
 
 func _on_button_2_pressed() -> void:
-	var jsString = "localStorage.getItem(%s)"
-	var completeString = jsString % [getValueInput.text]
+	var key = getValueInput.text
+	var result = "Could not find key"
 	
-	var result
 	if OS.has_feature('web'):
-		var jsResult = JavaScriptBridge.eval(completeString)
-		if (jsResult): result = jsResult
-		else: result = "Could not find key"
+		# Get item and check for null
+		var js_result = JavaScriptBridge.get_interface("localStorage").getItem(key)
+		result = js_result if js_result != null else "Could not find key"
 	else:
-		result = "Could not get localstorage"
+		result = "LocalStorage not available (get)"
 	
-	outputLabel.text = result
+	outputLabel.text = str(result)
 	
