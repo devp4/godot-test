@@ -6,8 +6,10 @@
 script = ExtResource("1_sbqod")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1164.0
-offset_bottom = 658.0
+offset_left = 57.0
+offset_top = 213.0
+offset_right = 1179.0
+offset_bottom = 822.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.362829, 0.362829, 0.362829, 1)
@@ -21,6 +23,7 @@ offset_bottom = 42.0
 text = "Key"
 
 [node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 651.0
 offset_top = 25.0
 offset_right = 691.0
@@ -28,6 +31,7 @@ offset_bottom = 48.0
 text = "Key"
 
 [node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 67.0
 offset_top = 164.0
 offset_right = 107.0
@@ -35,8 +39,10 @@ offset_bottom = 187.0
 text = "Value"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 53.0
+offset_top = 209.0
+offset_right = 93.0
+offset_bottom = 249.0
 
 [node name="keyinput" type="LineEdit" parent="TextureRect"]
 layout_mode = 0
